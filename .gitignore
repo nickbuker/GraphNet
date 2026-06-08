@@ -1,0 +1,10 @@
+# python stuff
+__pycache__/
+
+# notebook stuff
+.ipynb_checkpoints/
+
+# data stuff
+*.csv
+*.parquet
+
