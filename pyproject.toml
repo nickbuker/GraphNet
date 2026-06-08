@@ -1,0 +1,15 @@
+[project]
+name = "chemnet"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jupyterlab>=4.5.8",
+    "kagglehub>=1.0.1",
+    "matplotlib>=3.10.9",
+    "polars>=1.41.2",
+    "pysmiles>=2.0.1",
+    "scikit-learn>=1.9.0",
+    "torch>=2.12.0",
+]
