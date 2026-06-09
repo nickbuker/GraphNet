@@ -19,11 +19,15 @@ The answer is a clear yes.
 | Model | MAE (°C) | RMSE (°C) | Approach |
 |---|---|---|---|
 | Ridge Regression | 40.94 | 55.80 | L2-regularized linear model on 27 RDKit descriptors |
-| XGBoost | ~40.4 | 40.40 | Gradient boosting on same descriptors |
+| XGBoost | 30.64 | 40.40 | Gradient boosting on same descriptors |
 | **GIN** | **26.92** | **36.88** | Graph Isomorphism Network with virtual node |
 | **GAT** | **25.86** | **35.56** | Graph Attention Network with multi-head attention |
 
 Graph neural networks cut MAE by **~37%** compared to the best classical baseline.
+
+![Test Set Error](img/test_set_error.png)
+
+![Actual vs Predicted Melting Point](img/actual_vs_pred_mp.png)
 
 ---
 
@@ -58,6 +62,10 @@ Structural    │  MolWt  LogP  TPSA  RotBonds  Rings  AromaticRings  fsp3
 Functional    │  C=C  C≡C  COOH  OH  C=O  NH/NH₂  CONH
 Pharmacophore │  HBD  HBA
 ```
+
+![Ridge Coefficients](img/ridge_coefs.png)
+
+![XGBoost Feature Importances](img/boosting_feature_imp.png)
 
 ### Graph Neural Networks: Atoms as Nodes, Bonds as Edges
 
