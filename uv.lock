@@ -324,7 +324,6 @@ dependencies = [
     { name = "pandas" },
     { name = "polars" },
     { name = "pyarrow" },
-    { name = "pysmiles" },
     { name = "rdkit" },
     { name = "scikit-learn" },
     { name = "torch" },
@@ -341,7 +340,6 @@ requires-dist = [
     { name = "pandas", specifier = ">=3.0.3" },
     { name = "polars", specifier = ">=1.41.2" },
     { name = "pyarrow", specifier = ">=24.0.0" },
-    { name = "pysmiles", specifier = ">=2.0.1" },
     { name = "rdkit", specifier = ">=2026.3.3" },
     { name = "scikit-learn", specifier = ">=1.9.0" },
     { name = "torch", specifier = ">=2.12.0" },
@@ -1554,18 +1552,6 @@ wheels = [
 ]
 
 [[package]]
-name = "pbr"
-version = "7.0.3"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "setuptools" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/5e/ab/1de9a4f730edde1bdbbc2b8d19f8fa326f036b4f18b2f72cfbea7dc53c26/pbr-7.0.3.tar.gz", hash = "sha256:b46004ec30a5324672683ec848aed9e8fc500b0d261d40a3229c2d2bbfcedc29", size = 135625, upload-time = "2025-11-03T17:04:56.274Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/c0/db/61efa0d08a99f897ef98256b03e563092d36cc38dc4ebe4a85020fe40b31/pbr-7.0.3-py2.py3-none-any.whl", hash = "sha256:ff223894eb1cd271a98076b13d3badff3bb36c424074d26334cd25aebeecea6b", size = 131898, upload-time = "2025-11-03T17:04:54.875Z" },
-]
-
-[[package]]
 name = "pexpect"
 version = "4.9.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1813,19 +1799,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f3/91/9c6ee907786a473bf81c5f53cf703ba0957b23ab84c264080fb5a450416f/pyparsing-3.3.2.tar.gz", hash = "sha256:c777f4d763f140633dcb6d8a3eda953bf7a214dc4eff598413c070bcdc117cbc", size = 6851574, upload-time = "2026-01-21T03:57:59.36Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl", hash = "sha256:850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d", size = 122781, upload-time = "2026-01-21T03:57:55.912Z" },
-]
-
-[[package]]
-name = "pysmiles"
-version = "2.0.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "networkx" },
-    { name = "pbr" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/b2/0b/4877ab6084294d246f55b2d5a91fbda04cebd8775856efc0281460bd5520/pysmiles-2.0.1.tar.gz", hash = "sha256:cc78feca42d5b95dcb3033e0c89ade4886caabfefbe21d70e921815f2ddaf89b", size = 55496, upload-time = "2026-01-19T10:36:59.028Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/c7/67/1b4f61cc83ebe9365e9011d1bb3eb82515ac8710699928f80651ba65d11c/pysmiles-2.0.1-py2.py3-none-any.whl", hash = "sha256:e225eb4f81f02bed3aa8c01582f547b3311896c1b117710df3b65dadfe40883f", size = 37552, upload-time = "2026-01-19T10:36:58.065Z" },
 ]
 
 [[package]]
