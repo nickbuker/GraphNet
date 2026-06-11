@@ -10,8 +10,6 @@ A molecule's melting point is a fundamental physical property, yet predicting it
 
 The core question: **does explicitly representing a molecule as a graph — atoms as nodes, bonds as edges — yield better predictions than hand-crafted descriptors?**
 
-The answer is a clear yes.
-
 ---
 
 ## Results at a Glance
@@ -23,7 +21,11 @@ The answer is a clear yes.
 | **GIN** | **26.86** | **36.28** | Graph Isomorphism Network with virtual node |
 | **GAT** | **25.99** | **34.86** | Graph Attention Network with multi-head attention |
 
-Graph neural networks cut MAE by **~37%** compared to the best classical baseline.
+---
+
+
+
+
 
 ![Test Set Error](img/test_set_error.png)
 
