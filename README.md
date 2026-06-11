@@ -19,7 +19,7 @@ The answer is a clear yes.
 | Model | MAE (°C) | RMSE (°C) | Approach |
 |---|---|---|---|
 | Ridge Regression | 40.26 | 54.59 | L2-regularized linear model on 33 RDKit descriptors |
-| XGBoost | 29.89 | 39.67 | Gradient boosting on same descriptors |
+| XGBoost | 28.60 | 38.56 | Gradient boosting on same descriptors |
 | **GIN** | **26.86** | **36.28** | Graph Isomorphism Network with virtual node |
 | **GAT** | **25.99** | **34.86** | Graph Attention Network with multi-head attention |
 
