@@ -77,6 +77,8 @@ Each molecule becomes a graph. A virtual "supernode" connects bidirectionally to
 
 **Aspirin — C₉H₈O₄ · mp ≈ 135 °C**
 
+![Aspirin Structure](img/aspirin_structure.jpeg)
+
 ```mermaid
 graph LR
     VN(["🔵 Virtual Node"])
@@ -199,15 +201,15 @@ Melting points span roughly −100°C to 350°C. After deduplication (one ambigu
 
 ## Observations
 
-**1. Graph topology is information.** The explicit bond graph captures structural patterns — ring systems, conjugation, branching — that are hard to encode in scalar descriptors. The ~37% MAE reduction over XGBoost reflects this directly.
+**1. Graph topology is information.** The explicit bond graph captures structural patterns — ring systems, conjugation, branching — that are hard to encode in scalar descriptors. The ~9% MAE reduction over XGBoost reflects this directly.
 
-**2. Attention helps with chemistry.** GAT's selective attention likely learns that certain bonds (e.g., conjugated, ring-closing) are more informative for melting point than others. The slight edge over GIN is consistent and shows up on both MAE and RMSE.
+**2. Attention helps with chemistry.** GAT's selective attention likely learns that certain bonds (e.g., conjugated, ring-closing) are more informative for melting point than others. The slight edge over GIN is consistent and shows up on both MAE and RMSE, at the cost of significantly more parameters.
 
 **3. Virtual nodes work well.** Adding a global supernode connected to all atoms provides long-range information flow without complicating the architecture — a small trick with meaningful impact.
 
 **4. All models struggle with outliers.** Rigid polycyclic aromatics (anthraquinones, fullerenes) and functional-group-dense molecules (isocyanates, polyfluorides) defeat all models. The chemistry community would call this the "crystal packing problem" — intermolecular forces in the solid state depend on 3D geometry not present in SMILES.
 
-**5. Classical baselines are surprisingly competitive.** XGBoost on 33 features matches Ridge on RMSE. Much of the signal is in simple counts (molecular weight, LogP, rotatable bonds). The GNNs add the rest.
+**5. Classical baselines are surprisingly competitive.** Much of the signal is in simple counts (molecular weight, LogP, rotatable bonds). XGBoost extracts this far more effectively than Ridge by relaxing the linear assumption (~29% MAE reduction), and the GNNs add the rest through explicit graph structure (~35% MAE reduction vs Ridge overall).
 
 ---
 
@@ -231,6 +233,7 @@ Melting points span roughly −100°C to 350°C. After deduplication (one ambigu
 | `00_data_cleaning` | Deduplication, split creation |
 | `01_feature_engineering` | 33 RDKit descriptors from SMILES |
 | `02_ridge_model` | Ridge regression with α sweep |
+| `02b_ridge_model_expanded_features` | Ridge regression with expanded feature set |
 | `03_boosting_model` | XGBoost with early stopping |
 | `04_graph_features` | Atom/bond featurization, graph construction |
 | `05_gin_model` | GIN architecture, training loop, evaluation |
